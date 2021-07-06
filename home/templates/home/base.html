@@ -2,14 +2,122 @@
 <html lang="en">
 
 <head>
+    {% load static %}
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% block metaarea %}
+    {% endblock metaarea %}
+    <title>
+        {% block titlearea %}
+        {% endblock titlearea %}
+    </title>
+
+    <!-- ALL CSS LINKING ARE HERE -->
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'home\styles\packaged\bootstrap5\css\bootstrap.css' %}" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'home\styles\packaged\fontawesome-free-5.15.3-web\css\all.min.css' %}" />
+    <!-- Tiny Slider -->
+    <link rel="stylesheet" type="text/css" href="{% static 'home\styles\packaged\tiny-slider\tiny-slider.css' %}" />
+    <!-- Custom -->
+    <link rel="stylesheet" type="text/css" href="{% static 'home\styles\custom\css\base.min.css' %}" />
 </head>
 
 <body>
+    <header>
+        <div class="top-bar container mt-20">
+            <div class="row row-eq-height">
+                <div class="col-md-4 text-center logo">
+                    <a href="{% url 'home' %}">
+                        <img class="img-responsive" src="{% static 'home\static_images\long_logo.png' %}"
+                            alt="ASMAN Logo" />
+                    </a>
+                </div>
+                <div class="col-md-8">
+                    <div class="top-contact-details">
+                        <div class="row">
+                            <!-- CALL INFORMATION -->
+                            <div class="col-md-4">
+                                <div class="clearfix border-r">
+                                    <img class="img-responsive float-start t-contact-img
+                                            " src="{% static 'home\static_images\call.png' %}" alt="" />
+                                    <div class="t-contact-info ubuntu float-start">
+                                        <span class="fz-14 gray-999">
+                                            Call Us Now
+                                        </span>
+                                        <span class="fz-13">
+                                            01-5190192
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- EMAIL INFORMATION -->
+                            <div class="col-md-4">
+                                <div class="clearfix border-r">
+                                    <img class="img-responsive float-start t-contact-img"
+                                        src="{% static 'home\static_images\email.png' %} " alt="" />
+                                    <div class="t-contact-info ubuntu float-start">
+                                        <span class="fz-14 gray-999">
+                                            Email us
+                                        </span>
+                                        <span class="fz-13">
+                                            info@asman.net.np
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- DONATION BUTTON IN CASE OF FUTURE NEED
+                            <div class="col-md-4">
+                                <a class="martel text-uppercase" href="#">$  Donate Now</a>
+                            </div> -->
+                            <!-- SOCIAL MEDIA CONNECTION -->
+                            <div class="col-md-3 top-contact-social">
+                                <a href="https://www.facebook.com/ASMANalumnae" target="_blank"
+                                    rel="noopener noreferrer nofollow">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer nofollow">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer></footer>
+
+
+    <!-- ALL JS LINKING ARE HERE -->
+    <!-- jQuery -->
+    <script type=" text/javascript" src="{% static 'home\styles\packaged\jQuery\jquery-3.6.0.min.js' %}"></script>
+    <!-- bootstrap JS -->
+    <script type=" text/javascript" src="{% static 'home\styles\packaged\bootstrap5\js\bootstrap.js' %}"></script>
+    <!-- Font Awesome -->
+    <script type=" text/javascript" src="{% static 'home\styles\packaged\fontawesome-free-5.15.3-web\js\all.min.js' %}">
+    </script>
+    <!-- Tiny Slider -->
+    <script type=" text/javascript" src="{% static 'home\styles\packaged\tiny-slider\tiny-slider.js' %}"></script>
+    </script>
+    <!-- MixitUp -->
+    <script type=" text/javascript" src="{% static 'home\styles\packaged\mixitup-v3\mixitup.js' %}"></script>
+    <!-- Custom -->
+    <script type=" text/javascript" src="{% static 'home\styles\custom\js\base.js' %}"></script>
+
+    {% block javascript %}
+    {% endblock javascript %}
 </body>
 
 </html>

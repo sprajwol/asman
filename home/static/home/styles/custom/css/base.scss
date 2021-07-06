@@ -1,0 +1,82 @@
+@import 'global';
+
+/*== logo ==*/
+.top-bar {
+    display: none;
+}
+
+header {
+    .logo {
+        position: relative;
+
+        img {
+            display: inline-block;
+            left: 50%;
+            margin-left: -100px;
+            position: absolute;
+            top: 50%;
+            z-index: 3;
+        }
+    }
+}
+
+.top-contact-social {
+    a {
+        line-height: 50px;
+        padding: 0 18px;
+        color: #aaa;
+        font-size: 14px;
+        border-left: 1px solid rgba(153, 153, 153, 0.15);
+    }
+
+    a:hover {
+        color: #2e89d3;
+    }
+}
+
+// Top Contact Info
+.t-contact-info {
+    span {
+        display: block;
+        color: #4c4f5e;
+        margin-top: 8px;
+    }
+}
+
+.t-contact-img {
+    margin-right: 10px;
+}
+
+.top-contact-details {
+    a {
+        color: #2e89d3;
+        border: 1px solid #2e89d3;
+        line-height: 46px;
+        padding: 0 20px;
+        display: inline-block;
+    }
+
+    a:hover {
+        color: #fff;
+        background: #2e89d3;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .top-bar {
+        display: block;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
