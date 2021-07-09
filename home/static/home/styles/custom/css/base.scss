@@ -62,6 +62,72 @@ header {
     }
 }
 
+// Main Nav
+.main-nav {
+    background-color: #2e89d3;
+    position: relative;
+}
+
+.navbar-brand {
+    z-index: 2;
+    color: #2e89d3;
+    width: 40vw;
+}
+
+.nav.navbar-nav > li > a {
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+    color: #fff !important;
+    font-family: 'Martel Sans', sans-serif;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.nav.navbar-nav > li > a:hover {
+    color: #fff !important;
+}
+
+.nav.navbar-nav > li > a,
+.nav.navbar-nav > li > a:focus,
+.nav.navbar-nav > li.active > a {
+    background: transparent;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 3px solid transparent;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.nav.navbar-nav > li > a:hover,
+.nav.navbar-nav > li > a:focus,
+.nav.navbar-nav > li.active > a {
+    left: 0;
+    border-bottom: 3px solid #ffffff;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+    background-color: transparent;
+}
+.navbar-nav > li > a:focus,
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:focus,
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+    color: #fff !important;
+    background-color: transparent !important;
+}
+.dropdown-menu {
+    box-shadow: none;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 }
@@ -75,8 +141,35 @@ header {
     .top-bar {
         display: block;
     }
+
+    // Main Nav
+    .main-nav::after {
+        background: #fff none repeat scroll 0 0;
+        content: ' ';
+        height: 67px;
+        left: -15px;
+        overflow: hidden;
+        position: absolute;
+        top: -17px;
+        transform: skewX(-40deg);
+        width: 45%;
+    }
+
+    .navbar-brand img {
+        display: none;
+    }
+
+    nav.navbar {
+        margin-bottom: 0;
+        margin-left: 20px;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+    // Main Nav
+    .nav.navbar-nav > li {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
