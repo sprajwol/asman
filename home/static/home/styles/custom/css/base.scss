@@ -60,6 +60,10 @@ header {
         color: #fff;
         background: #2e89d3;
     }
+
+    .row {
+        justify-content: space-between;
+    }
 }
 
 // Main Nav
@@ -72,6 +76,10 @@ header {
     z-index: 2;
     color: #2e89d3;
     width: 40vw;
+}
+
+nav.navbar {
+    padding-bottom: 0;
 }
 
 .nav.navbar-nav > li > a {
@@ -96,10 +104,6 @@ header {
     bottom: 0;
     width: 100%;
     border-bottom: 3px solid transparent;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
