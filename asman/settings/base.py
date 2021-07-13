@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'home.apps.HomeConfig',
+    'getinvolved.apps.GetinvolvedConfig',
     'contact.apps.ContactConfig',
 ]
 
