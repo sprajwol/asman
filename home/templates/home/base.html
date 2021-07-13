@@ -120,17 +120,19 @@
                                     <li class="nav-item {{ gallery_page }}">
                                         <a class="nav-link" href="{% url 'home' %}">Gallery</a>
                                     </li>
-                                    <li class="nav-item dropdown">
+                                    <li class="nav-item dropdown {{ getinvolved_page }}">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             Get Involved
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="{% url 'home' %}">Become a Member</a>
+                                            <li><a class="dropdown-item" href="{% url 'membership' %}">Become a
+                                                    Member</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="{% url 'home' %}">Become a Volunteer</a>
+                                            <li><a class="dropdown-item" href="{% url 'volunteering' %}">Become a
+                                                    Volunteer</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="{% url 'home' %}">Make a Donation</a>
+                                            <li><a class="dropdown-item" href="{% url 'donation' %}">Make a Donation</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -187,18 +189,18 @@
                             <li><a href="{% url 'home' %}">Projects</a></li>
                             <li><a href="{% url 'home' %}">About Us</a></li>
                             <li><a href="{% url 'home' %}">Gallery</a></li>
-                            <li><a href="{% url 'home' %}">Membership</a></li>
+                            <li><a href="{% url 'membership' %}">Membership</a></li>
                             <li><a href="{% url 'contact' %}">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="">
                         <h6 class="text-uppercase text-bold gray-e8 bb display-ib">Donations</h6>
                         <ul class="list-unstyled useful-links">
-                            <li><a href="{% url 'home' %}">How to Donate</a></li>
+                            <li><a href="{% url 'donation' %}">How to Donate</a></li>
 
                             <!-- <li><a href="#">FAQ</a></li> -->
                         </ul>
-                        <a href="{% url 'home' %}" class="f-donate text-uppercase martel text-bold mt-30">Donate
+                        <a href="{% url 'donation' %}" class="f-donate text-uppercase martel text-bold mt-30">Donate
                             now!</a>
                     </div>
                     <div class="">
