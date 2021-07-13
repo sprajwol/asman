@@ -93,6 +93,7 @@ nav.navbar {
     padding-top: 25px;
     padding-bottom: 25px;
 }
+
 .nav.navbar-nav > li > a:hover {
     color: #fff !important;
 }
@@ -119,6 +120,7 @@ nav.navbar {
 .navbar-nav > .active > a:focus {
     background-color: transparent;
 }
+
 .navbar-nav > li > a:focus,
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:focus,
@@ -200,6 +202,7 @@ a.f-donate {
     color: #fff;
     display: inline-block;
 }
+
 a.f-donate:hover {
     background-color: #fff;
     color: #222;
@@ -209,9 +212,42 @@ a.f-donate:hover {
     background-color: #2e89d3;
     color: #f5f4f4;
 }
+
 .lower-footer span {
     line-height: 50px;
 }
+
+// Page Titles
+.page-title {
+    min-height: 330px;
+    position: relative;
+    background-size: cover !important;
+    width: 100%;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    h2 {
+        font-size: 45px;
+        line-height: 250px;
+    }
+}
+
+.page-location {
+    padding: 20px 80px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -140px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    span {
+        word-spacing: 5px;
+    }
+}
+.page-location.direct {
+    margin-left: -108px;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 }

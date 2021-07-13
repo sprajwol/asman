@@ -1,0 +1,104 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block metaarea %}
+{% endblock metaarea %}
+
+{% block titlearea %}
+Contact | ASMAN
+{% endblock titlearea %}
+
+{% block cssarea %}
+<link rel="stylesheet" type="text/css" href="{% static 'contact\styles\custom\css\contact.min.css' %}" />
+{% endblock cssarea %}
+
+{% block content %}
+<section class="page-title contact-title text-center"
+    style="background: linear-gradient( rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8) ), url({% static 'home\static_images\blog-p4.jpg' %});">
+    <h2 class="text-extra-bold white text-uppercase">Contact</h2>
+    <div class="page-location text-center display-ib"
+        style="background-image: url({% static 'home\static_images\curved.png' %});">
+        <span class="ubuntu fz-14 green-5c">Home <i class="gray-e9">/</i> Contact</span>
+    </div>
+</section>
+
+<section class="mt-150 contact-us mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <h3 class="black h-sep">Contact <span class="text-extra-bold">Us</span></h3>
+                <p class="fz-16 gray-666 mt-50">Our charity helps those people who have no hope</p>
+
+                <div class="mt-30" id="message"></div>
+                <form id="contactform_forms" class="mt-20 checkout-form" method="post" action="#">
+
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 mt-30">
+                            {{ form.full_name }}
+                        </div>
+                        <div class="col-md-6 mt-30">
+                            {{ form.email }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-30">
+                            {{ form.mobile_number }}
+                        </div>
+                        <div class="col-md-6 mt-30">
+                            {{ form.address }}
+                        </div>
+                    </div>
+                    {{ form.message }}
+                    <div class="mt-50 submit mb-150">
+                        <input type="submit" class="martel text-extra-bold text-uppercase fz-14" value="Send message">
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-3 col-md-offset-1 col-sm-4 mt-150">
+                <div class="contact-info clearfix">
+                    <div class="float-start">
+                        <h5 class="fz-15 black text-bold mb-10">Office Address</h5>
+                        <span class="ubuntu fz-14 gray-777 lh-22">44 New Design Street <br>Australia - Melbourne
+                            55455</span>
+                    </div>
+                    <div class="contact-icon float-end position-r">
+                        <img src="{% static 'home\static_images\office.png' %}" alt="">
+                        <img src="{% static 'home\static_images\office-hover.png' %}" alt="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="c-border">
+                </div>
+                <div class="contact-info clearfix mt-20">
+                    <div class="float-start">
+                        <h5 class="fz-15 black text-bold mb-10">Phone</h5>
+                        <span class="ubuntu fz-14 gray-777 lh-22">(01) 987 633 522 01 <br>(01) 987 633 522 01</span>
+                    </div>
+                    <div class="contact-icon float-end position-r">
+                        <img src="{% static 'home\static_images\phone.png' %}" alt="">
+                        <img src="{% static 'home\static_images\phone-hover.png' %}" alt="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="c-border">
+                </div>
+                <div class="contact-info clearfix mt-20">
+                    <div class="float-start">
+                        <h5 class="fz-15 black text-bold mb-10">E-mail</h5>
+                        <span class="ubuntu fz-14 gray-777 lh-22">office@aideo.com <br>admin@aideo.com</span>
+                    </div>
+                    <div class="contact-icon float-end position-r">
+                        <img src="{% static 'home\static_images\mail.png' %}" alt="">
+                        <img src="{% static 'home\static_images\mail-hover.png' %}" alt="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="c-border">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

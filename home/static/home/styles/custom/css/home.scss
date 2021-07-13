@@ -1,6 +1,9 @@
 /*== MAIN SLIDER ==*/
 .main-slider-img > img {
     width: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .overlay {
@@ -14,13 +17,17 @@
 }
 
 .main-slider-content {
-    left: 15%;
-    margin-top: -146px;
     position: absolute;
-    top: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 
     h2 {
         line-height: 50px;
+        width: fit-content;
         padding: 0 25px;
         background-color: #2e89d3;
         display: inline-block;
