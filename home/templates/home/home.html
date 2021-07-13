@@ -16,6 +16,44 @@ ASMAN
 
 <section id="hero-slider">
     <div class="container-fluid no-padding">
+        <div class="main-slider">
+            {{hero_slider_data}}
+            {% for each_slider in hero_slider_data %}
+            <div class="item">
+                <div class="main-slider-img position-r">
+                    <img src="/media/{{ each_slider.image }}" alt="HeroSlider {{ forloop.counter }}">
+                    <div class="overlay"></div>
+                    <div class="main-slider-content">
+                        <h2 class="lora fz-20 white text-bold text-italic">ASMAN</h2>
+                        <h3 class="white text-uppercase mt-25 position-r">{{ each_slider.main_text }}</h3>
+                        <h4 class="lora fz-18 white text-bold text-italic mt-30">{{ each_slider.sub_text }}</h4>
+
+                        {% if each_slider.btn_to_show == 'membership' %}
+                        <div class="mt-30">
+                            <a class="martel fz-14 text-bold" href="{% url 'home' %}">Become a member <i
+                                    class="fa fa-caret-right"></i></a>
+                        </div>
+                        {% endif %}
+
+                        {% if each_slider.btn_to_show == 'volunteering' %}
+                        <div class="mt-30">
+                            <a class="martel fz-14 text-bold" href="{% url 'home' %}">Become a volunteer <i
+                                    class="fa fa-caret-right"></i></a>
+                        </div>
+                        {% endif %}
+
+                        {% if each_slider.btn_to_show == 'donation' %}
+                        <div class="mt-30">
+                            <a class="martel fz-14 text-bold" href="{% url 'home' %}">Donate Now <i
+                                    class="fa fa-caret-right"></i></a>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 {% endblock content %}
