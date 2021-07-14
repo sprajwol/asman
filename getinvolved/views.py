@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import FormView, TemplateView
 
 from getinvolved.models import MembershipApplicant, VolunteerApplicant
-from getinvolved.forms import MembershipApplicantForm, VolunteerApplicantForm
+from getinvolved.forms import MembershipApplicantForm, VolunteerApplicantForm, DonationForm
 # Create your views here.
 
 
@@ -32,8 +32,10 @@ class VolunteeringView(FormView):
         return context
 
 
-class DonationView(TemplateView):
+class DonationView(FormView):
     template_name = 'getinvolved/donation.html'
+    form_class = DonationForm
+    success_url = '/donation/'
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context

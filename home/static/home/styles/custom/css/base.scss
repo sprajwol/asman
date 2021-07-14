@@ -226,6 +226,9 @@ a.f-donate:hover {
     background-position: center !important;
     background-repeat: no-repeat !important;
 
+    display: flex;
+    justify-content: center;
+
     h2 {
         font-size: 45px;
         line-height: 250px;
@@ -236,8 +239,6 @@ a.f-donate:hover {
     padding: 20px 80px;
     position: absolute;
     bottom: 0;
-    left: 50%;
-    margin-left: -140px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     span {

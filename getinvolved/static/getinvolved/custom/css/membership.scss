@@ -1,19 +1,19 @@
 /* ========================================================================== 
-CONTACT US
+Membership APPLICATION
 ========================================================================== */
 
-.contact-us .h-sep::before {
+.membership-application .h-sep::before {
     left: 0;
     margin-left: 0;
 }
-.contact-us .form-control::-webkit-input-placeholder {
+.membership-application .form-control::-webkit-input-placeholder {
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     font-weight: normal;
     color: #cbcbcb;
 }
 
-.contact-us .form-control:-moz-placeholder {
+.membership-application .form-control:-moz-placeholder {
     /* Firefox 18- */
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
@@ -21,7 +21,7 @@ CONTACT US
     color: #cbcbcb;
 }
 
-.contact-us .form-control::-moz-placeholder {
+.membership-application .form-control::-moz-placeholder {
     /* Firefox 19+ */
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
@@ -29,13 +29,13 @@ CONTACT US
     color: #cbcbcb;
 }
 
-.contact-us .form-control:-ms-input-placeholder {
+.membership-application .form-control:-ms-input-placeholder {
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     font-weight: normal;
     color: #cbcbcb;
 }
-.contact-us input.form-control,
+.membership-application input.form-control,
 .leave-comment input:focus.form-control {
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
@@ -46,7 +46,7 @@ CONTACT US
     border-radius: 0;
     border-color: #ececec;
 }
-.contact-us textarea.form-control,
+.membership-application textarea.form-control,
 .leave-comment textarea:focus.form-control {
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
@@ -58,7 +58,7 @@ CONTACT US
     border-color: #ececec;
     resize: none;
 }
-.contact-us .submit > input {
+.membership-application .submit > input {
     color: #fff;
     background-color: #2e89d3;
     line-height: 40px;
@@ -71,12 +71,11 @@ CONTACT US
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.contact-us .submit > input:hover {
+.membership-application .submit > input:hover {
     color: #222;
     background-color: transparent;
     border-color: #2e89d3;
 }
-
 .contact-icon > img {
     position: absolute;
     top: 0;

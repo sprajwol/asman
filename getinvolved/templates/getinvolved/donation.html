@@ -9,13 +9,107 @@ Donation | ASMAN
 {% endblock titlearea %}
 
 {% block cssarea %}
-<link rel="stylesheet" type="text/css" href="{% static 'home\styles\custom\css\donation.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'getinvolved\custom\css\donation.min.css' %}" />
 {% endblock cssarea %}
 
 {% block content %}
+<section class="page-title donation-title text-center"
+    style="background: linear-gradient( rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8) ), url({% static 'home\static_images\blog-p3.jpg' %});">
+    <h2 class="text-extra-bold white text-uppercase">Donation</h2>
+    <div class="page-location text-center display-ib"
+        style="background-image: url({% static 'home\static_images\curved.png' %});">
+        <span class="ubuntu fz-14 green-5c">Home <i class="gray-e9">/</i> Donation</span>
+    </div>
+</section>
 
+<section class="mt-150 donation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <h3 class="black h-sep">Make <span class="text-extra-bold">Donation</span></h3>
+                <p class="fz-16 gray-666 mt-50">You can also be a contributor for our cause by making donation.
+                    <br>Different donation gateways are available for the purpose.</p>
+
+                <h3 class="black h-sep mt-150">Make <span class="text-extra-bold">Donation</span></h3>
+                <p class="fz-16 gray-666 mt-50">Please let us know in which project you would like to donate.</p>
+                <div class="mt-30" id="message"></div>
+                <form id="donation_form" class="mt-20 checkout-form" method="post" action="#">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 mt-30">
+                            {{ form.full_name }}
+                        </div>
+                        <div class="col-md-6 mt-30">
+                            {{ form.email }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-30">
+                            {{ form.mobile_number }}
+                        </div>
+                        <div class="col-md-6 mt-30">
+                            {{ form.address }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mt-30">
+                            {{ form.project }}
+                        </div>
+                    </div>
+
+                    <p class="fz-16 gray-666 mt-50">Let us know about the payment gateway you would like to use. And
+                        anything you would like to suggest for donation.</p>
+
+                    {{ form.message }}
+                    <div class="mt-50 submit mb-150">
+                        <input type="submit" class="martel text-extra-bold text-uppercase fz-14" value="Send message">
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-3 offset-md-1 col-sm-4 mt-150">
+                <div class="contact-info clearfix">
+                    <div class="float-start">
+                        <h5 class="fz-15 black text-bold mb-10">Office Address</h5>
+                        <span class="ubuntu fz-14 gray-777 lh-22">Jawalakhel <br>Kathmandu</span>
+                    </div>
+                    <div class="contact-icon float-end position-r">
+                        <img src="{% static 'home\static_images\office.png' %}" alt="">
+                        <img src="{% static 'home\static_images\office-hover.png' %}" alt="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="c-border">
+                </div>
+                <div class="contact-info clearfix mt-20">
+                    <div class="float-start">
+                        <h5 class="fz-15 black text-bold mb-10">Phone</h5>
+                        <span class="ubuntu fz-14 gray-777 lh-22">01-5190192</span>
+                    </div>
+                    <div class="contact-icon float-end position-r">
+                        <img src="{% static 'home\static_images\phone.png' %}" alt="">
+                        <img src="{% static 'home\static_images\phone-hover.png' %}" alt="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="c-border">
+                </div>
+                <div class="contact-info clearfix mt-20">
+                    <div class="float-start">
+                        <h5 class="fz-15 black text-bold mb-10">E-mail</h5>
+                        <span class="ubuntu fz-14 gray-777 lh-22">info@asman.net.np <br>kanchan@asman.net.np</span>
+                    </div>
+                    <div class="contact-icon float-end position-r">
+                        <img src="{% static 'home\static_images\mail.png' %}" alt="">
+                        <img src="{% static 'home\static_images\mail-hover.png' %}" alt="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="c-border">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
 
 {% block javascript %}
-<script type=" text/javascript" src="{% static 'home\styles\custom\js\donation.js' %}"></script>
 {% endblock javascript %}
