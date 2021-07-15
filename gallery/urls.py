@@ -2,10 +2,10 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from contact import views as contact_views
+from gallery import views as gallery_views
 
 urlpatterns = [
-    path('', contact_views.ContactView.as_view(), name='contact')
+    path('', gallery_views.GalleryView.as_view(), name='gallery')
 ]
 
 if settings.DEBUG:

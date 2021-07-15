@@ -245,8 +245,44 @@ a.f-donate:hover {
         word-spacing: 5px;
     }
 }
+
 .page-location.direct {
     margin-left: -108px;
+}
+
+// BUttons
+.btns > a {
+    margin-right: 36px;
+    color: #353535;
+}
+.btns > a:hover {
+    color: #2e89d3;
+}
+a.btn-prime {
+    line-height: 55px;
+    display: inline-block;
+    padding: 0 30px;
+    color: #fff;
+    background: #2e89d3;
+    border: 1px solid transparent;
+}
+a.btn-prime:hover {
+    background: transparent;
+    border-color: #2e89d3;
+    color: #2e89d3;
+}
+.tri-b {
+    position: relative;
+}
+.tri-b:after {
+    border-color: transparent #2e89d3 #2e89d3 transparent;
+    border-style: solid;
+    border-width: 12px;
+    content: ' ';
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    display: block;
 }
 
 /* Small devices (landscape phones, 576px and up) */
