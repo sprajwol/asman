@@ -32,19 +32,24 @@ Gallery | ASMAN
         </div>
 
         <div class="row mt-20">
-            {% for each_album in albums|slice:":4" %}
+            {% if object_list %}
+            {% for each_album in object_list %}
             <div class="col-md-3 col-sm-6 mt-50 text-center">
                 <div class="gallery-item">
                     <div class="gallery-img">
-                        <img class="img-responsive" src="/media/{{ each_album.images.all.first }}"
-                            alt=" {{ each_album.photo_album_name }}">
-                        <div class="gallery-overlay"></div>
-                        <div class="gallery-overlay-content text-center">
-                            <img src="{% static 'home\static_images\locked.png' %}"
-                                alt="{{ each_album.photo_album_name }}">
-                        </div>
+                        <a href="{{ each_album.get_absolute_url }}">
+                            <img class="img-responsive" src="/media/{{ each_album.images.all.first }}"
+                                alt=" {{ each_album.photo_album_name }}">
+                            <div class="gallery-overlay"></div>
+                            <div class="gallery-overlay-content text-center">
+                                <img src="{% static 'home\static_images\locked.png' %}"
+                                    alt="{{ each_album.photo_album_name }}">
+                            </div>
+                        </a>
                     </div>
-                    <h5 class="text-semi-bold mt-30">{{ each_album.photo_album_name }}</h5>
+                    <a href="{{ each_album.get_absolute_url }}">
+                        <h5 class="text-semi-bold mt-30">{{ each_album.photo_album_name }}</h5>
+                    </a>
                 </div>
             </div>
             {% if forloop.counter|divisibleby:4 %}
@@ -52,6 +57,9 @@ Gallery | ASMAN
         <div class="row mt-20">
             {% endif %}
             {% endfor %}
+            {% else %}
+            <h5 class="text-semi-bold mt-30">No albums has yet been created.</h5>
+            {% endif %}
         </div>
 
         <div class="row">

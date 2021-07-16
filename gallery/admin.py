@@ -26,6 +26,7 @@ class AlbumAdmin(admin.ModelAdmin):
     form = AlbumAdminForm
     list_display = ['photo_album_name']
     inlines = [ImageInline]
+    prepopulated_fields = {'photo_album_name_slug': ('photo_album_name',)}
 
     def save_related(self, request, form, formsets, change):
         super().save_related(request, form, formsets, change)
