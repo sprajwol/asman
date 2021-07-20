@@ -133,6 +133,10 @@
     transform: scale(1);
 }
 
+.staff-member-group {
+    grid-column: 1;
+}
+
 .staff-social {
     position: absolute;
     top: -20px;
@@ -177,6 +181,10 @@
     .staff-member-group {
         grid-template-columns: 1fr 1fr;
     }
+
+    .staff-member-group > .view-more {
+        grid-column: 1 / span 2;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -184,6 +192,10 @@
     /*== STAF MEMBER ==*/
     .staff-member-group {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .staff-member-group > .view-more {
+        grid-column: 1 / span 3;
     }
 }
 
