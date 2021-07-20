@@ -67,3 +67,126 @@
         color: #2e89d3;
     }
 }
+
+/*== STAF MEMBER ==*/
+.staff-member-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+}
+
+.staff-member {
+    width: auto;
+    padding: 0 20px;
+    justify-self: center;
+}
+.staff-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2e89d3;
+    padding: 20px 0;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+
+.staff-hover {
+    height: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    background-color: #2e89d3;
+    padding: 2px 0 20px 0;
+    // border-bottom: 3.31px solid #2e89d3;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+
+.staff-hover::before {
+    content: '';
+    position: absolute;
+    //     // left: -1px;
+    top: -80px;
+    height: 81px; //should be of same as positive value of 'top' + 1
+    width: 100%;
+    background-color: #2e89d3;
+    display: block;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.staff-member:hover .staff-overlay {
+    opacity: 0;
+    transform: scale(0);
+}
+.staff-member:hover .staff-hover {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.staff-social {
+    position: absolute;
+    top: -20px;
+    z-index: 5;
+}
+.staff-social > li {
+    padding: 0;
+    display: inline-block;
+}
+.staff-social > li > a {
+    font-size: 14px;
+    color: #fff;
+    // background: rgba(27, 27, 27, 1);
+    background: #2e89d3;
+    padding: 12px;
+    margin-right: 6px;
+}
+
+.staff-social > li:nth-of-type(1) > a {
+    position: relative;
+    top: 1px;
+}
+.staff-social > li:nth-of-type(2) > a {
+    position: relative;
+    top: -10px;
+}
+.staff-social > li:nth-of-type(3) > a {
+    position: relative;
+    top: -23px;
+}
+.staff-social > li > a:hover {
+    color: rgba(27, 27, 27, 1);
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /*== STAF MEMBER ==*/
+    .staff-member-group {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /*== STAF MEMBER ==*/
+    .staff-member-group {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

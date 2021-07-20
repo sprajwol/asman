@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 
 from home.models import HeroSlider
-# from about.models import Testimonial, Member
+from about.models import Testimonial, Member
 # from projects.models import Project, ProjectCategory
 # Create your views here.
 
@@ -28,10 +28,10 @@ class HomeView(TemplateView):
         # else:
         #     project_data = 'no_data'
 
-        # if (Member.objects.all().exists()):
-        #     member_data = Member.objects.all()[:3]
-        # else:
-        #     member_data = 'no_data'
+        if (Member.objects.all().exists()):
+            member_data = Member.objects.all()[:3]
+        else:
+            member_data = 'no_data'
 
         # if (Testimonial.objects.all().exists()):
         #     testimonial_data = Testimonial.objects.all()
@@ -41,7 +41,7 @@ class HomeView(TemplateView):
         context['home_page'] = 'active'
         context['hero_slider_data'] = hero_slider_data
         # context['testimonial_data'] = testimonial_data
-        # context['member_data'] = member_data
+        context['member_data'] = member_data
         # context['project_data'] = project_data
         # context['project_cat_data'] = project_cat_data
         return context
