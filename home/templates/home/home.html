@@ -120,6 +120,46 @@ ASMAN
         </div>
     </div>
 </section>
+
+<section class="testimonials mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class=" black h-sep">ASMAN <span class="text-ultra-bold">Testimonials</span> </h3>
+                <p class="fz-16 gray-666 mt-50">Our charity helps organizations to bring changes.</p>
+            </div>
+        </div>
+
+        <div class="row mt-100">
+            <div class="col-md-12">
+                <div class="testimonial-slider">
+                    {% for each_testimonial in testimonial_data %}
+                    <div class="item">
+                        <div class="item-grid">
+                            <div class="testimonial-img display-ib position-r float-start">
+                                <img class="img-fluid display-ib" src="/media/{{ each_testimonial.image }}"
+                                    alt="{{ each_testimonial.organization }}">
+                            </div>
+                            <div class="display-ib float-start testimonial-text">
+                                <img class="img-fluid mt-30" src="{% static 'home\static_images\quote-open.png' %}"
+                                    alt="">
+                                <h4 class="fz-17 d-black text-bold mt-30">{{ each_testimonial.organization }}</h4>
+                                <h5 class="fz-15 green-5c mt-10">{{ each_testimonial.position }}</h5>
+                                <p class="mt-25">
+                                    {{ each_testimonial.testimonial }}
+                                </p>
+                                <img class="img-fluid float-end mt-30"
+                                    src="{% static 'home\static_images\quote-close.png' %}" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
 
 {% block javascript %}

@@ -1,4 +1,4 @@
-var slider = tns({
+var testimonial_slider = tns({
     container: '.testimonial-slider',
     gutter: 16,
     autoplay: false,
