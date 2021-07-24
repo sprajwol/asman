@@ -19,7 +19,7 @@ var main = tns({
 var testimonial_slider = tns({
     container: '.testimonial-slider',
     gutter: 16,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 3500,
     autoplayButtonOutput: false,
     loop: true,

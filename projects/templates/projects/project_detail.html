@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block metaarea %}
+{% endblock metaarea %}
+
+{% block titlearea %}
+Projects | ASMAN
+{% endblock titlearea %}
+
+{% block cssarea %}
+<link rel="stylesheet" type="text/css" href="{% static 'projects\styles\custom\css\project_detail.min.css' %}" />
+{% endblock cssarea %}
+
+{% block content %}
+<section class="page-title contact-title text-center"
+    style="background: linear-gradient( rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8) ), url({% static 'home\static_images\blog-p4.jpg' %});">
+    <h2 class="text-extra-bold white text-uppercase">Projects</h2>
+    <div class="page-location text-center display-ib"
+        style="background-image: url({% static 'home\static_images\curved.png' %});">
+        <span class="ubuntu fz-14 green-5c">Home <i class="gray-e9">/</i> Projects</span>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}
