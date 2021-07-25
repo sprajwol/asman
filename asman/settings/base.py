@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_summernote',
+
     'home.apps.HomeConfig',
     'about.apps.AboutConfig',
     'projects.apps.ProjectsConfig',
@@ -106,3 +108,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Summernote
+SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
+
+SUMMERNOTE_CONFIG = {
+    'attachment_filesize_limit': 1024*1024*10,  # specify the file size
+
+    'summernote': {
+        'fontNames': ['Martel Sans', 'Ubuntu', 'Karla', 'Lora', 'Poppins'],
+        'fontNamesIgnoreCheck': ['Martel Sans', 'Ubuntu', 'Karla', 'Lora', 'Poppins'],
+    },
+}

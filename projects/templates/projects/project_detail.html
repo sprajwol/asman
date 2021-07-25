@@ -13,12 +13,83 @@ Projects | ASMAN
 {% endblock cssarea %}
 
 {% block content %}
-<section class="page-title contact-title text-center"
+<section class="page-title project-detail-title text-center"
     style="background: linear-gradient( rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8) ), url({% static 'home\static_images\blog-p4.jpg' %});">
-    <h2 class="text-extra-bold white text-uppercase">Projects</h2>
+    <h2 class="text-extra-bold white text-uppercase">{{ project.title }}</h2>
     <div class="page-location text-center display-ib"
         style="background-image: url({% static 'home\static_images\curved.png' %});">
         <span class="ubuntu fz-14 green-5c">Home <i class="gray-e9">/</i> Projects</span>
+    </div>
+</section>
+
+<section class="project-detail-body">
+    <div class="container">
+        <div class="row mt-100 mb-150">
+            <div class="col-lg-9 project-detail-main mt-50">
+                <div class="project-content">
+                    <div class="project-img">
+                        <img class="img-fluid" src="/media/{{ project.main_image }}" alt="{{ project.title }}" />
+                        <div class="project-date">
+                            <img src="{% static 'home\static_images\blog-c.png' %}" alt="" />
+                            <span class="white martel fz-13 text-uppercase">{{ project.date }}</span>
+                        </div>
+                    </div>
+                    <h4 class="black-23 mt-40">{{ project.title }}</h4>
+                    <h6 class="ubuntu fz-13 gray-777 mt-20">
+                        Location: {{ project.location }}
+                        <span class="sep-space"> / </span>
+                        2 comments
+                    </h6>
+                    <div class="project-body mt-30 lh-28">
+                        {{ project.description|safe }}
+                    </div>
+
+                    <div class="project-single-share clearfix mt-30">
+                        <div class="float-end text-center">
+                            <span class="martel text-bold fz-13 gray-777 text-uppercase">Share It</span>
+                            <a href="#"><i class="fab fa-facebook-f"></i></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <!-- <a href="#"><i class="fa fa-google-plus"></i></a> -->
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 mt-50 project-detail-sidebar">
+                <div class="s-search">
+                    <div class="input-group">
+                        <div class="input-group-addon gray-777">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <input type="text" class="form-control" id="datepicker" placeholder="search">
+                    </div>
+                </div>
+
+                <div class="other-projects-list mt-50">
+                    {% if other_projects_data %}
+                    <h4 class=" black h-sep mb-60">Other <span class="text-ultra-bold">Projects</span> </h4>
+                    {% for each_other_project in other_projects_data %}
+                    <div class="other-project mt-30">
+                        <div class="other-project-img"
+                            style="background: linear-gradient( rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8) ), url(/media/{{ each_other_project.main_image }});">
+                        </div>
+                        <!-- <img src="/media/{{ each_other_project.main_image }}" alt="" class="float-start img-fluid"> -->
+                        <div class="other-project-detail">
+                            <h6 class="fz-13 gray-777 lh-22 text-uppercase mb-20">
+                                {{ each_other_project.title }}
+                            </h6>
+                            <span class="ubuntu fz-13 green-5c"><i class="fa fa-calendar"></i> Jan 12, 2015</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <h4 class=" black h-sep mb-60">No other projects has yet been added.</h4>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 

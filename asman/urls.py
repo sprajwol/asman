@@ -26,6 +26,8 @@ urlpatterns = [
     path('gallery/', include('gallery.urls')),
     path('getinvolved/', include('getinvolved.urls')),
     path('contact/', include('contact.urls')),
+
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:

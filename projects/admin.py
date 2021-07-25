@@ -1,12 +1,15 @@
 from django.contrib import admin
 from django.template.loader import get_template
 from django.utils.translation import gettext as _
+from django_summernote.admin import SummernoteModelAdmin
 
 from projects.models import Project, ProjectCategory
 # Register your models here.
 
 
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(SummernoteModelAdmin):
+    summernote_fields = ('description',)
+
     list_display = ('title', 'id',)
     prepopulated_fields = {'slug': ('title',)}
     fields = ('title', 'slug', 'main_image', 'image_thumb', 'date', 'location', 'category',
