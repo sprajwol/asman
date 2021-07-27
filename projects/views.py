@@ -12,8 +12,12 @@ class ProjectsView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         if (Project.objects.all().exists()):
-            project_data = Project.objects.all()
-            context['project_data'] = project_data
+            past_project_data = Project.objects.all()
+            context['past_project_data'] = past_project_data
+
+        if (Project.objects.all().exists()):
+            upcoming_project_data = Project.objects.all()
+            context['upcoming_project_data'] = upcoming_project_data
 
         context['projects_page'] = 'active'
 

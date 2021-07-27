@@ -39,12 +39,14 @@
     background-color: #fff;
 }
 
-.past-projects-wrapper .tns-outer .tns-nav {
+.past-projects-wrapper .tns-outer .tns-nav,
+.upcoming-projects-wrapper .tns-outer .tns-nav {
     margin-top: 80px;
     text-align: center;
 }
 
-.past-projects-wrapper .tns-outer .tns-nav button {
+.past-projects-wrapper .tns-outer .tns-nav button,
+.upcoming-projects-wrapper .tns-outer .tns-nav button {
     background-color: #d5d5d5;
     border-radius: 4px;
     border-width: 0;
@@ -56,7 +58,60 @@
 }
 
 .past-projects-wrapper .tns-outer .tns-nav button:hover,
-.past-projects-wrapper .tns-outer .tns-nav button.tns-nav-active {
+.past-projects-wrapper .tns-outer .tns-nav button.tns-nav-active,
+.upcoming-projects-wrapper .tns-outer .tns-nav button:hover,
+.upcoming-projects-wrapper .tns-outer .tns-nav button.tns-nav-active {
     background: #2e89d3;
     width: 20px;
+}
+
+/*== Our Help==*/
+.our-help {
+    padding: 150px 0;
+    background-size: cover;
+}
+
+.our-help .h-sep::before {
+    background-image: url('../img/h-sep-white.png');
+}
+.our-help canvas {
+    overflow: hidden;
+    width: 102px;
+    height: 102px;
+}
+.round-bar-status.float-start.text-center {
+    padding-left: 30px;
+    margin-top: 20px;
+}
+.round-bar-status > h2 {
+    width: 103px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+}
+.round-bar-status > h2::before {
+    background-color: #fff;
+    content: '';
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    border-radius: 50%;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }
