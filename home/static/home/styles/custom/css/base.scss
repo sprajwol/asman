@@ -208,6 +208,21 @@ a.f-donate:hover {
     color: #222;
 }
 
+.footer-d-v {
+    padding: 40px 30px;
+    background-color: #333333;
+}
+.footer-d-v a.btn-prime {
+    line-height: 32px;
+    padding: 0 20px;
+}
+.footer-d-v .tri-b::after {
+    border-width: 8px;
+}
+.footer-d-v h5 {
+    color: #d0d0d0;
+}
+
 .lower-footer {
     background-color: #2e89d3;
     color: #f5f4f4;
