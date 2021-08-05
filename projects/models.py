@@ -16,9 +16,25 @@ def get_project_main_image_uploadpath(instance, filename):
 
 class ProjectCategory(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.name)
+
+    def _get_unique_slug(self):
+        slug = slugify(self.name)
+        unique_slug = slug
+        num = 1
+        while Project.objects.filter(slug=unique_slug).exists():
+            unique_slug = '{}-{}'.format(slug, num)
+            num += 1
+        return unique_slug
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self._get_unique_slug()
+
+        super().save(*args, **kwargs)
 
 
 class Project(models.Model):

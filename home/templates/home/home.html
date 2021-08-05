@@ -56,6 +56,41 @@ ASMAN
     </div>
 </section>
 
+<section class="our-projects gray-f9f9-bg mt-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="text-uppercase black h-sep">Our <span class="text-ultra-bold">Projects</span> </h3>
+                <p class="fz-16 gray-666 mt-50">Our projects helps those people who have no hope</p>
+
+                <div class="p-filter-nav mt-30">
+                    <a href="javascript:;" id="all" data-type="{{ each_project_cat_data.slug }}"
+                        class="projects-filter filter ubuntu all active">All</a>
+                    {% for each_project_cat_data in project_cat_data %}
+                    <a href="javascript:;" id="{{ each_project_cat_data.slug }}"
+                        class="projects-filter filter ubuntu {{ each_project_cat_data.slug }}">
+                        {{ each_project_cat_data.name }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div id="projects-wrapper" class="projects-wrapper mt-90">
+            <div class="row mt-70">
+                <div class="col-md-12">
+                    <div id='projects-slider' class="projects-slider">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="staff mt-150">
     <div class="container">
         <div class="row">
@@ -162,5 +197,6 @@ ASMAN
 {% endblock content %}
 
 {% block javascript %}
+{% include 'home\ajax_projects.html' %}
 <script type=" text/javascript" src="{% static 'home\styles\custom\js\home.js' %}"></script>
 {% endblock javascript %}

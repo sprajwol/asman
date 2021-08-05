@@ -39,3 +39,31 @@ var testimonial_slider = tns({
         },
     },
 });
+
+function project_slider_tns() {
+    var project_slider = tns({
+        container: '.projects-slider',
+        gutter: 16,
+        autoplay: true,
+        autoplayTimeout: 3500,
+        autoplayButtonOutput: false,
+        loop: true,
+        mouseDrag: true,
+        controls: false,
+        nav: true,
+        navPosition: 'bottom',
+        responsive: {
+            576: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            900: {
+                items: 3,
+            },
+        },
+    });
+
+    return project_slider;
+}

@@ -1,4 +1,6 @@
-from django.views.generic import TemplateView, DetailView
+from django.http.response import JsonResponse
+from django.core import serializers
+from django.views.generic import TemplateView, DetailView, View
 
 from projects.models import Project
 # Create your views here.
@@ -22,6 +24,30 @@ class ProjectsView(TemplateView):
         context['projects_page'] = 'active'
 
         return context
+
+
+class AjaxProjectsView(View):
+    def get(self, request, **kwargs):
+        # print("AjaxProjectsView")
+        # request should be ajax and method should be GET.
+        if (self.request.is_ajax and self.request.method == 'GET'):
+            category = request.GET.get('category', '')
+
+            try:
+                project_list = Project.objects.all().values()
+                # print("project_list", project_list)
+            except Exception as e:
+                error = {"error": "No projects has yet been added."}
+                error = {"error": str(e)}
+                return JsonResponse(error, status=204)
+
+            if category != '':
+                project_list = project_list.filter(category__slug=category)
+                # print("project_listcategory", project_list)
+            # data = serializers.serialize("json", project_list)
+            return JsonResponse(data={"data": list(project_list)}, status=200, safe=True)
+
+        return JsonResponse({"error": "Invalid request method."}, status=400)
 
 
 class ProjectDetailView(DetailView):

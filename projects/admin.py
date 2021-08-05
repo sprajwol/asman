@@ -25,5 +25,9 @@ class ProjectAdmin(SummernoteModelAdmin):
     image_thumb.short_description = _("Main Image Preview")
 
 
+class ProjectCategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+
+
 admin.site.register(Project, ProjectAdmin)
-admin.site.register(ProjectCategory)
+admin.site.register(ProjectCategory, ProjectCategoryAdmin)

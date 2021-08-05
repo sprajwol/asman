@@ -1,0 +1,116 @@
+{% load static %}
+<script>
+    window.addEventListener('load', get_ajax_projects());
+
+    var projectsFilter = document.querySelectorAll('.projects-filter.filter')
+    // console.log("a", a)
+    projectsFilter.forEach(element => {
+        element.addEventListener('click', () => {
+
+            projectsFilter.forEach(remover => {
+                remover.classList.remove('active')
+            })
+            element.classList.add('active')
+            // console.log("id", element.id)
+
+            get_ajax_projects(element.id)
+        })
+    });
+
+    function get_ajax_projects(category = 'all') {
+        // Creating the XMLHttpRequest object
+        var xhttp = new XMLHttpRequest();
+
+        if (category == 'all') {
+            // Instantiating the request object
+            xhttp.open("GET", "{% url 'ajax_projects' %}", true)
+        } else {
+            // Instantiating the request object
+            // console.log('else')
+            xhttp.open("GET", "{% url 'ajax_projects' %}?category=" + category, true)
+        }
+        xhttp.send();
+
+        // Defining event listener for readystatechange event
+        xhttp.onreadystatechange = function () {
+            // Check if the request is compete and was successful
+            if (this.readyState === 4 && this.status === 200) {
+                // Inserting the response from server into an HTML element
+                // console.log("WORKING AJAX SCRIPT")
+                resp = this.responseText;
+                resp = JSON.parse(resp)
+                // console.log(resp)
+                // console.log(resp.data)
+
+                item_list = []
+
+                resp.data.forEach(each_project_data => {
+                    var date = new Date(each_project_data.date);
+                    overhead = `
+                    <div class="row mt-70">
+                        <div class="col-md-12">
+                            <div id='projects-slider' class="projects-slider">
+                    `
+                    underhead = `</div></div></div>`
+                    item = `
+                        <div class="item">
+                            <div class="project-img text-center">
+                                <img src="/media/${each_project_data.main_image}" class="img-fluid"
+                                    alt="${each_project_data.title}" />
+                                <div class="badge-c">
+                                <span class="martel text-bold fz-13 white lh-20">
+                                    ${date.getDate()}
+                                    <br> ${date.toLocaleString("default", { month: "short" })}
+                                    </span>
+                                    <span class="b-round white martel fz-14 text-semi-bold">
+                                        ${date.getFullYear()}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="project-content text-center">
+                                <span class="ubuntu fz-14 gray-777 display-block">Location: <span
+                                        class="green-5c">${each_project_data.location}</span>
+                                </span>
+                                <div>
+                                    <h5 class="martel text-semi-bold d-black mt-30">
+                                        ${each_project_data.title}
+                                    </h5>
+                                    <p class="lh-22 mt-10">${each_project_data.summary}</p>
+                                </div>
+                                <div>
+                                    <a class="fz-14 mt-20 btn-black" href="{% url 'donation' %}">
+                                        Donate Now
+                                    </a>
+                                    <a class="fz-14 mt-20 btn-green-br" href="/projects/${each_project_data.slug}">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        `
+                    // console.log(item)
+                    // console.log("1")
+                    item_list += item
+                    inner_code = overhead + item_list + underhead
+                });
+                document.getElementById('projects-wrapper').innerHTML = inner_code
+
+                // the function below is defined in home.js
+                project_slider_tns()
+            } else {
+                overhead = `
+                    <div class="row mt-70">
+                        <div class="col-md-12">
+                            `
+                underhead = `</div></div>`
+                no_data = `
+                <h5 class="text-semi-bold mt-30">No project data has yet been added.</h5>
+                `
+                inner_code = overhead + no_data + underhead
+                document.getElementById('projects-wrapper').innerHTML = inner_code
+                // console.log("NOT WORKING AJAX SCRIPT")
+            }
+        }
+    }
+</script>

@@ -7,7 +7,10 @@ from projects import views as projects_views
 urlpatterns = [
     path('', projects_views.ProjectsView.as_view(), name='projects'),
     path('<slug:slug>', projects_views.ProjectDetailView.as_view(),
-         name='projectdetail')
+         name='projectdetail'),
+    path('ajax/', projects_views.AjaxProjectsView.as_view(), name='ajax_projects'),
+    #     path('ajax/<slug:slug>', projects_views.AjaxProjectsView.as_view(),
+    #          name='ajax_projects')
 ]
 
 if settings.DEBUG:
