@@ -91,6 +91,58 @@ ASMAN
     </div>
 </section>
 
+<section class="trust-o" style="background: linear-gradient(rgba(54, 54, 54, 0.8), rgba(54, 54, 54, 0.8)),
+url({% static 'home\static_images\trust-o.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="charity-video">
+                    <iframe src="https://www.youtube.com/embed/O2aR9Qobmtc" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="trust-us">
+                    <h2 class="white text-bold h-sep">Who we are ? Organization You Can Trust</h2>
+                    <h5 class="karala white text-bold mt-50">Association of St. Mary's Alumnae Nepal </h5>
+                    <p class="white mt-15">ASMAN is an organized, self-government, non-profitable and non-potilical,
+                        non-government organization with regular successor. It operates educational support programs to
+                        poor and helpless children studying in different schools.</p>
+                </div>
+                <div class="fund-process mt-30 display-ib">
+                    <h6 class="white text-bold">Impact target this year</h6>
+                    <div class="fund-state mt-40">
+                        <div class="barWrapper">
+                            <!-- <span class="progressText"><B>CSS3</B></span> -->
+                            <div class="progress ">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                                    aria-valuenow="60" aria-valuemin="10" aria-valuemax="100" style="">
+                                    <span class="popOver" data-toggle="tooltip" data-placement="top" title="60%">
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fund-details">
+                        <div class="detail-goal text-center display-ib">
+                            <img src="{% static 'home\static_images\raised.png' %}" alt="">
+                            <span class="fz-13 white martel text-bold display-block mt-10">Done 6,000+</span>
+                        </div>
+                        <div class="detail-goal text-center display-ib">
+                            <img src="{% static 'home\static_images\goal.png' %}" alt="">
+                            <span class="fz-13 white martel text-bold display-block mt-10">Goal 10,000+</span>
+                        </div>
+                        <div class="detail-goal text-center display-ib">
+                            <img src="{% static 'home\static_images\days.png' %}" alt="">
+                            <span class="fz-13 white martel text-bold display-block mt-10">Time left 6 months</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="staff mt-150">
     <div class="container">
         <div class="row">
@@ -151,6 +203,58 @@ ASMAN
             <div class="text-center mt-100 view-more">
                 <a href="{% url 'about' %}" class="btn-prime tri-b fz-15">All Members</a>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="our-help mt-150"
+    style="background: linear-gradient(rgba(54, 54, 54, 0.8), rgba(54, 54, 54, 0.8)),  url({% static 'home\static_images\our-help.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class=" white h-sep">How Can <span class="text-ultra-bold">We Help ? </span> </h3>
+                <p class="fz-16 white mt-50">In 2015 we distributed $.56m in funding to 60 organisations and projects.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mt-70">
+                <div id="canvas-holder" class="clearfix">
+                    <canvas id="chart-area" class="float-start"></canvas>
+                    <div class="round-bar-status float-start text-center">
+                        <h2 class="white text-semi-bold">20%</h2>
+                        <h5 class="fz-13 text-semi-bold white text-uppercase mt-10">Volunteers</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-70">
+                <div id="canvas-holder1" class="clearfix">
+                    <canvas id="chart-area1" class="float-start"></canvas>
+                    <div class="round-bar-status float-start text-center">
+                        <h2 class="white text-semi-bold">55%</h2>
+                        <h5 class="fz-13 text-semi-bold white text-uppercase mt-10">education</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-70">
+                <div id="canvas-holder2" class="clearfix">
+                    <canvas id="chart-area2" class="float-start"></canvas>
+                    <div class="round-bar-status float-start text-center">
+                        <h2 class="white text-semi-bold">70%</h2>
+                        <h5 class="fz-13 text-semi-bold white text-uppercase mt-10">donators</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-70">
+                <div id="canvas-holder3" class="clearfix">
+                    <canvas id="chart-area3" class="float-start"></canvas>
+                    <div class="round-bar-status float-start text-center">
+                        <h2 class="white text-semi-bold">85%</h2>
+                        <h5 class="fz-13 text-semi-bold white text-uppercase mt-10">event program</h5>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

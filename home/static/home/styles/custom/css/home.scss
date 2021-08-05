@@ -131,6 +131,127 @@
     background-color: #fff;
 }
 
+/*== ORGANIZATION TRUST ==*/
+
+.trust-o {
+    padding: 140px 0;
+    background-size: cover;
+}
+
+.trust-o > .container > .row > .col-md-6:nth-of-type(1) {
+    margin-bottom: 50px;
+}
+
+.charity-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Fund progress bar
+.fund-process {
+    padding: 20px 15px;
+    border: 1px solid #fff;
+}
+.fund-process .tooltip {
+    position: relative;
+    float: right;
+}
+.fund-process .tooltip > .tooltip-inner {
+    background-color: #2e89d3;
+    background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 15px 15px;
+    padding: 7px 6px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 10px;
+    font-family: 'Martel Sans', sans-serif;
+    border-radius: 0;
+    display: inline-block;
+}
+.fund-process .popOver + .tooltip > .tooltip-arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #2e89d3;
+    bottom: 1px;
+}
+.fund-process .progress {
+    border-radius: 0;
+    overflow: visible;
+    height: 6px;
+}
+.fund-process .progress-bar {
+    /* background:rgb(23,44,60);  */
+    background-color: #2e89d3;
+    background-image: linear-gradient(to bottom, #2e89d3, #2e89d3);
+    position: relative;
+    -webkit-transition: width 1.5s ease-in-out;
+    transition: width 1.5s ease-in-out;
+}
+.fund-process .progress-bar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+    z-index: 1;
+    background-size: 15px 15px;
+    animation: move 2s linear infinite;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+}
+.fund-process .progress-bar::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 1px;
+    height: 14px;
+    background-color: #2e89d3;
+}
+
+.fund-details > .detail-goal {
+    margin-right: 40px;
+}
+.fund-details > .detail-goal:nth-of-type(3) {
+    margin-right: 0;
+}
+.charity-video {
+    position: relative;
+    top: 60px;
+}
+
 /*== STAF MEMBER ==*/
 .staff-member-group {
     display: grid;
@@ -234,6 +355,41 @@
     color: rgba(27, 27, 27, 1);
 }
 
+/*== Our Help==*/
+.our-help {
+    padding: 150px 0;
+    background-size: cover;
+}
+
+.our-help .h-sep::before {
+    background-image: url('../img/h-sep-white.png');
+}
+.our-help canvas {
+    overflow: hidden;
+    width: 102px;
+    height: 102px;
+}
+.round-bar-status.float-start.text-center {
+    padding-left: 30px;
+    margin-top: 20px;
+}
+.round-bar-status > h2 {
+    width: 103px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+}
+.round-bar-status > h2::before {
+    background-color: #fff;
+    content: '';
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    border-radius: 50%;
+}
+
 /*== TESTIMONIALS ==*/
 
 .testimonial-slider .item .item-grid {
@@ -319,6 +475,11 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    /*== ORGANIZATION TRUST ==*/
+    .trust-o > .container > .row > .col-md-6:nth-of-type(1) {
+        margin-bottom: 0;
+    }
+
     /*== STAF MEMBER ==*/
     .staff-member-group {
         grid-template-columns: 1fr 1fr;
