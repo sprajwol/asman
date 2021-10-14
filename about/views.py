@@ -13,16 +13,11 @@ class AboutView(TemplateView):
 
         if (Testimonial.objects.all().exists()):
             testimonial_data = Testimonial.objects.all()
-        else:
-            testimonial_data = 'no_data'
+            context['testimonial_data'] = testimonial_data
 
         if (Member.objects.all().exists()):
             member_data = Member.objects.all()
-        else:
-            member_data = 'no_data'
+            context['member_data'] = member_data
 
         context['about_page'] = 'active'
-        # context['testimonial_data'] = testimonial_data
-        context['member_data'] = member_data
-        context['testimonial_data'] = testimonial_data
         return context

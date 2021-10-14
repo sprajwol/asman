@@ -27,15 +27,21 @@ About | ASMAN
         <div class="row">
             <div class="col-md-6 asman-description">
                 <h4 class="d-black lh-33 h-sep">Association of St. Mary's Alumnae Nepal</h4>
-                <p class="lh-28 gray-777 fz-15 mt-30">ASMAN is an organized, self-government, non-profitable and
-                    non-potilical, non-government organization with regular successor. It operates educational support
-                    programs to poor and helpless children studying in different schools. </p>
-                <p class="fz-15 gray-777 lh-28 mt-15">It also conducts awareness oriented programs related to health and
-                    environment.</p>
+                <p class="lh-28 gray-777 fz-15 mt-30">
+                    Establish in 1998 AD, Asman Nepal is a national level non-governmental
+                    organization (NGO), dedicated fully towards the better of children and women with fulfillment of
+                    their needs, protection of their rights and promotion of their growth and independence. With
+                    strong advocation of child rights, we believe that to become aware people need to hear and to
+                    make people hear we need to speak. Our voices may ring in ears today but tomorrow it will
+                    enlighten towards a humane society with gleeful children and women led society towards
+                    prosperity and growth.
+                </p>
+                <p class="fz-15 gray-777 lh-28 mt-15">
+                    It also conducts awareness oriented programs related to health and
+                    environment.
+                </p>
                 <div class="mt-50">
                     <a href="{% url 'donation' %}" class="btn-green">Donate Now</a>
-                    <a href="#" class="btn-green-br">Read More</a>
-                    <!-- expand the content in the same page for read more button -->
                 </div>
             </div>
             <div class="col-md-6 asman-description-img">
@@ -58,55 +64,36 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                 <div class="trust-us">
                     <h2 class="white text-bold h-sep">Who we are ? Organization You Can Trust</h2>
                     <h5 class="karala white text-bold mt-50">Association of St. Mary's Alumnae Nepal </h5>
-                    <p class="white mt-15">ASMAN is an organized, self-government, non-profitable and non-potilical,
-                        non-government organization with regular successor. It operates educational support programs to
-                        poor and helpless children studying in different schools.</p>
-                </div>
-                <div class="fund-process mt-30 display-ib">
-                    <h6 class="white text-bold">Impact target this year</h6>
-                    <div class="fund-state mt-40">
-                        <div class="barWrapper">
-                            <!-- <span class="progressText"><B>CSS3</B></span> -->
-                            <div class="progress ">
-                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                                    aria-valuenow="60" aria-valuemin="10" aria-valuemax="100" style="">
-                                    <span class="popOver" data-toggle="tooltip" data-placement="top" title="60%">
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fund-details">
-                        <div class="detail-goal text-center display-ib">
-                            <img src="{% static 'home\static_images\raised.png' %}" alt="">
-                            <span class="fz-13 white martel text-bold display-block mt-10">Done 6,000+</span>
-                        </div>
-                        <div class="detail-goal text-center display-ib">
-                            <img src="{% static 'home\static_images\goal.png' %}" alt="">
-                            <span class="fz-13 white martel text-bold display-block mt-10">Goal 10,000+</span>
-                        </div>
-                        <div class="detail-goal text-center display-ib">
-                            <img src="{% static 'home\static_images\days.png' %}" alt="">
-                            <span class="fz-13 white martel text-bold display-block mt-10">Time left 6 months</span>
-                        </div>
-                    </div>
+                    <p class="white mt-15">
+                        Affiliated with many organizations and honorable figures of Nepalese social domain, Asman
+                        is a well led organization through its presidents, past and present, to advocate its belief
+                        and execute every activity with effectiveness and efficiency.
+                        <br />
+                        With our strong culture of
+                        inclusive team and guiding and binding organization code we bring results that propels
+                        changes, positivity, strength and feeling of community all across our working areas.
+                        <br>
+                        Kanchan
+                        Shrestha, President since 2021, have shown passionate and unparallel efforts in realizing
+                        the missions and values of the organization.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <section class="staff mt-150">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3 class=" black h-sep">Committee <span class="text-ultra-bold">Members</span> </h3>
-                <p class="fz-16 gray-666 mt-50">We work together to bring changes and positivity.</p>
+                <h3 class=" black h-sep">Committee <span class="text-ultra-bold">Members</span>
+                </h3>
+                <p class="fz-16 gray-666 mt-50">
+                    We work together to bring changes and positivity.
+                </p>
             </div>
         </div>
         <div class="staff-member-group mt-10">
-
             {% for each_member in member_data %}
             <div class="staff-member position-r text-center mt-50">
                 <img class="img-fluid" src="/media/{{ each_member.image }}" alt="{{ each_member.full_name }}">
@@ -152,6 +139,10 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                     </span>
                 </div>
             </div>
+            {% empty %}
+            <p class="fz-16 mt-50">
+                No member data has been added.
+            </p>
             {% endfor %}
         </div>
     </div>
@@ -191,6 +182,10 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                         </div>
 
                     </div>
+                    {% empty %}
+                    <p class="fz-16 mt-50">
+                        No testimonial data has been added.
+                    </p>
                     {% endfor %}
                 </div>
             </div>

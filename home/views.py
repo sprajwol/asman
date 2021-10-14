@@ -24,17 +24,11 @@ class HomeView(TemplateView):
 
         if (Member.objects.all().exists()):
             member_data = Member.objects.all()[:3]
-        else:
-            member_data = 'no_data'
+            context['member_data'] = member_data
 
         if (Testimonial.objects.all().exists()):
             testimonial_data = Testimonial.objects.all()
-        else:
-            testimonial_data = 'no_data'
-
+            context['testimonial_data'] = testimonial_data
         context['home_page'] = 'active'
         context['hero_slider_data'] = hero_slider_data
-        context['testimonial_data'] = testimonial_data
-        context['member_data'] = member_data
-        # context['project_data'] = project_data
         return context

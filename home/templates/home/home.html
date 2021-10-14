@@ -61,10 +61,11 @@ ASMAN
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 overcoming">
                 <h4 class="d-black lh-33 h-sep">ASMAN support for covid-19</h4>
-                <p class="lh-28 mt-50 fz-15">Due to covid-19 pandemic, lots of people are highly suffering in Nepal.
-                    ASMAN is supporting the needy ones with health facilities and food distribution.</p>
-                <p class="lh-28 mt-20 fz-15">It also conducts awareness oriented programs related to health and
-                    environment.</p>
+                <p class="lh-28 mt-50 fz-15">
+                    Establish in 1998 AD, Asman Nepal is a national level non-governmental
+                    organization (NGO), dedicated fully towards the better of children and women with fulfillment of
+                    their needs, protection of their rights and promotion of their growth and independence...
+                </p>
                 <div class="btns mt-50">
                     <a class="text-uppercase martel fz-14 btn-prime tri-b" href="{% url 'about' %}">Read More</a>
                 </div>
@@ -154,39 +155,21 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                 <div class="trust-us">
                     <h2 class="white text-bold h-sep">Who we are ? Organization You Can Trust</h2>
                     <h5 class="karala white text-bold mt-50">Association of St. Mary's Alumnae Nepal </h5>
-                    <p class="white mt-15">ASMAN is an organized, self-government, non-profitable and non-potilical,
-                        non-government organization with regular successor. It operates educational support programs to
-                        poor and helpless children studying in different schools.</p>
-                </div>
-                <div class="fund-process mt-30 display-ib">
-                    <h6 class="white text-bold">Impact target this year</h6>
-                    <div class="fund-state mt-40">
-                        <div class="barWrapper">
-                            <!-- <span class="progressText"><B>CSS3</B></span> -->
-                            <div class="progress ">
-                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                                    aria-valuenow="60" aria-valuemin="10" aria-valuemax="100" style="">
-                                    <span class="popOver" data-toggle="tooltip" data-placement="top" title="60%">
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fund-details">
-                        <div class="detail-goal text-center display-ib">
-                            <img src="{% static 'home\static_images\raised.png' %}" alt="">
-                            <span class="fz-13 white martel text-bold display-block mt-10">Done 6,000+</span>
-                        </div>
-                        <div class="detail-goal text-center display-ib">
-                            <img src="{% static 'home\static_images\goal.png' %}" alt="">
-                            <span class="fz-13 white martel text-bold display-block mt-10">Goal 10,000+</span>
-                        </div>
-                        <div class="detail-goal text-center display-ib">
-                            <img src="{% static 'home\static_images\days.png' %}" alt="">
-                            <span class="fz-13 white martel text-bold display-block mt-10">Time left 6 months</span>
-                        </div>
-                    </div>
+                    <p class="white mt-15">
+                        Affiliated with many organizations and honorable figures of Nepalese social domain, Asman
+                        is a well led organization through its presidents, past and present, to advocate its belief
+                        and execute every activity with effectiveness and efficiency.
+                        <br />
+                        <br />
+                        With our strong culture of
+                        inclusive team and guiding and binding organization code we bring results that propels
+                        changes, positivity, strength and feeling of community all across our working areas.
+                        <br>
+                        <br>
+                        Kanchan
+                        Shrestha, President since 2021, have shown passionate and unparallel efforts in realizing
+                        the missions and values of the organization.
+                    </p>
                 </div>
             </div>
         </div>
@@ -248,6 +231,8 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                     </span>
                 </div>
             </div>
+            {% empty %}
+            <h5 class="text-semi-bold mt-30">No member data has been added.</h5>
             {% endfor %}
 
             <div class="text-center mt-100 view-more">
@@ -342,6 +327,8 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                         </div>
 
                     </div>
+                    {% empty %}
+                    <h5 class="text-semi-bold mt-30">No testimonials has yet been added.</h5>
                     {% endfor %}
                 </div>
             </div>
