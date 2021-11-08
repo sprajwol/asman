@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.fields.related import ForeignKey
 from django.urls import reverse
 from django.utils.text import slugify
 # Create your models here.
@@ -25,7 +24,7 @@ class ProjectCategory(models.Model):
         slug = slugify(self.name)
         unique_slug = slug
         num = 1
-        while Project.objects.filter(slug=unique_slug).exists():
+        while ProjectCategory.objects.filter(slug=unique_slug).exists():
             unique_slug = '{}-{}'.format(slug, num)
             num += 1
         return unique_slug
