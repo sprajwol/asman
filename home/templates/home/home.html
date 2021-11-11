@@ -278,8 +278,8 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                             <div class="display-ib float-start testimonial-text">
                                 <img class="img-fluid mt-30" src="{% static 'home\static_images\quote-open.png' %}"
                                     alt="">
-                                <h4 class="fz-17 d-black text-bold mt-30">{{ each_testimonial.organization }}</h4>
-                                <h5 class="fz-15 green-5c mt-10">{{ each_testimonial.position }}</h5>
+                                <h4 class="fz-17 d-black text-bold mt-30">{{ each_testimonial.full_name }}</h4>
+                                <h5 class="fz-15 green-5c mt-10">{{ each_testimonial.position }}, {{ each_testimonial.organization }}</h5>
                                 <p class="mt-25">
                                     {{ each_testimonial.testimonial }}
                                 </p>
