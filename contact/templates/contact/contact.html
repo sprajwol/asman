@@ -28,9 +28,15 @@ Contact | ASMAN
             <div class="col-md-8 col-sm-8">
                 <h3 class="black h-sep">Contact <span class="text-extra-bold">Us</span></h3>
                 <p class="fz-16 gray-666 mt-50">Our charity helps those people who have no hope</p>
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
 
                 <div class="mt-30" id="message"></div>
-                <form id="contactform_forms" class="mt-20 checkout-form" method="post" action="#">
+                <form id="contactform_forms" class="mt-20 checkout-form" method="post">
 
                     {% csrf_token %}
                     <div class="row">
