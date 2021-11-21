@@ -41,26 +41,26 @@ Membership | ASMAN
                 <h3 class="black h-sep mt-150">Membership <span class="text-extra-bold">application</span></h3>
                 <p class="fz-16 gray-666 mt-50">Please fill up the following form.</p>
                 <div class="mt-30" id="message"></div>
-                <form id="membership_applicant_form" class="mt-20 checkout-form" method="post" action="#">
+                <form id="membership_applicant_form" class="mt-20 checkout-form" method="post">
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 mt-30">
-                            {{ form.full_name }}
+                            {{ membership_form.full_name }}
                         </div>
                         <div class="col-md-6 mt-30">
-                            {{ form.email }}
+                            {{ membership_form.email }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mt-30">
-                            {{ form.mobile_number }}
+                            {{ membership_form.mobile_number }}
                         </div>
                         <div class="col-md-6 mt-30">
-                            {{ form.address }}
+                            {{ membership_form.address }}
                         </div>
                     </div>
                     <p class="fz-16 gray-666 mt-50">Explain your reason to join ASMAN Committee</p>
-                    {{ form.reason }}
+                    {{ membership_form.reason }}
                     <div class="mt-50 submit mb-150">
                         <input type="submit" class="martel text-extra-bold text-uppercase fz-14" value="Send message">
                     </div>

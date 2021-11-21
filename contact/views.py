@@ -1,6 +1,5 @@
 from django.views.generic import View, TemplateView, FormView
 from django.contrib import messages
-from django.urls import reverse
 from django.http import HttpResponseRedirect
 
 from contact.models import Contact
