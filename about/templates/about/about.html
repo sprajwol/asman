@@ -104,12 +104,14 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                     <!-- <span class=" mt-15 ubuntu white text-medium text-uppercase display-block fz-11">
                         {{ each_member.position }}
                     </span> -->
+                    {% if each_member.msg %}
                     <span class=" mt-15 ubuntu white text-medium display-block fz-11 px-2">
                         <strong>"</strong>{{ each_member.msg }}<strong>"</strong>
                     </span>
+                    {% endif %}
 
                     <span class="mt-20 ubuntu fz-13 text-medium white display-block px-2">
-                        Tell : {{ each_member.mobile_number }}
+                        Tel : {{ each_member.mobile_number }}
                     </span>
                     <span class="mt-10 ubuntu fz-13 text-medium white display-block px-2">
                         Mail : {{ each_member.email }}
