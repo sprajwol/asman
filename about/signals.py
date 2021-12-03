@@ -9,7 +9,7 @@ from about.models import Member
 def ranking_update_if_conflict(sender, instance, **kwargs):
     # print(f"instance:::{instance}")
     # print(f"display_rank:::{instance.display_rank}")
-    if Member.objects.filter(display_rank=instance.display_rank).exists():
+    if instance.display_rank and Member.objects.filter(display_rank=instance.display_rank).exists():
         if not instance == Member.objects.get(display_rank=instance.display_rank):
             a = Member.objects.filter(display_rank__gte=instance.display_rank).update(
                 display_rank=F('display_rank') + 1)
