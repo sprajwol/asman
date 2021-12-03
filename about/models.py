@@ -32,14 +32,9 @@ class Member(models.Model):
         regex=r'(?:\+977[- ]?)?(98\d{8}|97\d{8}|96\d{8})$', message="Phone number must be entered in the format: '(?:\+977[- ]?)?(98\d{8}|97\d{8}|96\d{8})'. Up to 15 digits allowed.")
     mobile_number = models.CharField(
         max_length=20, blank=True, null=True, verbose_name='Mobile Number')
-    email = models.EmailField(max_length=100, verbose_name='Email Address')
+    email = models.EmailField(
+        max_length=100, blank=True, null=True, verbose_name='Email Address')
     msg = models.CharField(max_length=255, blank=True, null=True)
-    fb = models.CharField(max_length=200, blank=True, null=True,
-                          verbose_name='Facebook Profile Link')
-    twitter = models.CharField(
-        max_length=200, blank=True, null=True, verbose_name='Twitter Profile Link')
-    linkedin = models.CharField(
-        max_length=200, blank=True, null=True, verbose_name='LinkedIn Profile Link')
     date_joined = models.DateField(verbose_name='Date Joined')
     created_at = models.DateField(auto_now_add=True, verbose_name='Created at')
     updated_at = models.DateField(auto_now=True, verbose_name='Updated at')

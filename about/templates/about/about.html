@@ -98,23 +98,6 @@ url({% static 'home\static_images\trust-o.jpg' %});">
             <div class="staff-member position-r text-center mt-50">
                 <img class="img-fluid" src="/media/{{ each_member.image }}" alt="{{ each_member.full_name }}">
                 <div class="staff-hover">
-                    <ul class="staff-social list-inline">
-                        <li>
-                            <a href="{{ each_member.fb }}" target="_blank" rel="noopener noreferrer nofollow">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ each_member.twitter }}" target="_blank" rel="noopener noreferrer nofollow">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ each_member.linkedin }}" target="_blank" rel="noopener noreferrer nofollow">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
                     <h6 class="white text-bold text-uppercase px-2">
                         {{ each_member.full_name }}
                     </h6>
@@ -172,7 +155,8 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                                 <img class="img-fluid mt-30" src="{% static 'home\static_images\quote-open.png' %}"
                                     alt="">
                                 <h4 class="fz-17 d-black text-bold mt-30">{{ each_testimonial.full_name }}</h4>
-                                <h5 class="fz-15 green-5c mt-10">{{ each_testimonial.position }}, {{ each_testimonial.organization }}</h5>
+                                <h5 class="fz-15 green-5c mt-10">{{ each_testimonial.position }},
+                                    {{ each_testimonial.organization }}</h5>
                                 <p class="mt-25">
                                     {{ each_testimonial.testimonial }}
                                 </p>
