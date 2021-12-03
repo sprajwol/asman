@@ -110,12 +110,17 @@ url({% static 'home\static_images\trust-o.jpg' %});">
                     </span>
                     {% endif %}
 
+                    {% if each_member.mobile_number %}
                     <span class="mt-20 ubuntu fz-13 text-medium white display-block px-2">
-                        Tel : {{ each_member.mobile_number }}
+                        Contact : {{ each_member.mobile_number }}
                     </span>
+                    {% endif %}
+
+                    {% if each_member.email %}
                     <span class="mt-10 ubuntu fz-13 text-medium white display-block px-2">
                         Mail : {{ each_member.email }}
                     </span>
+                    {% endif %}
                 </div>
                 <div class="staff-overlay">
                     <h6 class="white text-bold text-uppercase">{{ each_member.full_name }}</h6>
