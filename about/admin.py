@@ -5,7 +5,7 @@ from about.models import Member, Testimonial
 
 
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'id',)
+    list_display = ('full_name', 'position', 'display_rank')
     readonly_fields = ('created_at', 'updated_at',)
     search_fields = ('email', 'mobile_number', 'full_name')
 
