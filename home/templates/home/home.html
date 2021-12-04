@@ -187,27 +187,10 @@ url({% static 'home\static_images\trust-o.jpg' %});">
         </div>
         <div class="staff-member-group mt-10">
 
-            {% for each_member in member_data %}
+            {% for each_member in member_data|slice:":2" %}
             <div class="staff-member position-r text-center mt-50">
                 <img class="img-fluid" src="/media/{{ each_member.image }}" alt="{{ each_member.full_name }}">
                 <div class="staff-hover">
-                    <ul class="staff-social list-inline">
-                        <li>
-                            <a href="{{ each_member.fb }}" target="_blank" rel="noopener noreferrer nofollow">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ each_member.twitter }}" target="_blank" rel="noopener noreferrer nofollow">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ each_member.linkedin }}" target="_blank" rel="noopener noreferrer nofollow">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
                     <h6 class="white text-bold text-uppercase px-2">
                         {{ each_member.full_name }}
                     </h6>
