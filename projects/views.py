@@ -1,6 +1,7 @@
 from django.http.response import JsonResponse
 from django.core import serializers
 from django.views.generic import TemplateView, DetailView, View
+import datetime
 
 from projects.models import Project
 # Create your views here.
@@ -14,11 +15,13 @@ class ProjectsView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         if (Project.objects.all().exists()):
-            past_project_data = Project.objects.all()
+            past_project_data = Project.objects.filter(
+                date__lt=datetime.date.today())
             context['past_project_data'] = past_project_data
 
         if (Project.objects.all().exists()):
-            upcoming_project_data = Project.objects.all()
+            upcoming_project_data = Project.objects.filter(
+                date__gte=datetime.date.today())
             context['upcoming_project_data'] = upcoming_project_data
 
         context['projects_page'] = 'active'
